@@ -2,4 +2,15 @@
 
 :root {
     --color-brand: #082f49;
+  --spacing-72: 18rem;
+  --spacing-84: 21rem;
+  --spacing-96: 24rem;
 }
+
+.p-72 { padding: var(--spacing-72); }
+.p-84 { padding: var(--spacing-84); }
+.p-96 { padding: var(--spacing-96); }
+
+.m-72 { margin: var(--spacing-72); }
+.m-84 { margin: var(--spacing-84); }
+.m-96 { margin: var(--spacing-96); }
