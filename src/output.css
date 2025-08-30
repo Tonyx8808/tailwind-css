@@ -8,10 +8,13 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-red-600: oklch(57.7% 0.245 27.325);
+    --color-red-700: oklch(50.5% 0.213 27.518);
     --color-sky-500: oklch(68.5% 0.169 237.323);
     --color-blue-500: oklch(62.3% 0.214 259.815);
     --color-blue-600: oklch(54.6% 0.245 262.881);
     --spacing: 0.25rem;
+    --text-lg: 1.125rem;
+    --text-lg--line-height: calc(1.75 / 1.125);
     --text-xl: 1.25rem;
     --text-xl--line-height: calc(1.75 / 1.25);
     --text-3xl: 1.875rem;
@@ -172,6 +175,27 @@
   }
 }
 @layer utilities {
+  .container {
+    width: 100%;
+    @media (width >= 40rem) {
+      max-width: 40rem;
+    }
+    @media (width >= 48rem) {
+      max-width: 48rem;
+    }
+    @media (width >= 64rem) {
+      max-width: 64rem;
+    }
+    @media (width >= 80rem) {
+      max-width: 80rem;
+    }
+    @media (width >= 96rem) {
+      max-width: 96rem;
+    }
+  }
+  .mx-auto {
+    margin-inline: auto;
+  }
   .table {
     display: table;
   }
@@ -181,8 +205,27 @@
   .resize {
     resize: both;
   }
+  .list-inside {
+    list-style-position: inside;
+  }
+  .list-decimal {
+    list-style-type: decimal;
+  }
   .list-disc {
     list-style-type: disc;
+  }
+  .list-image-\[url\(\/img\/checkmark\.png\)\] {
+    list-style-image: url(/img/checkmark.png);
+  }
+  .list-image-\[url\(https\:\/\/www\.google\.com\/url\?sa\=i\&url\=https\%3A\%2F\%2Fimgbin\.com\%2Ffree-png\%2Fgreen-tick\&psig\=AOvVaw1Y8ERQTcH1K2Eka9tGrJmV\&ust\=1756644387678000\&source\=images\&cd\=vfe\&opi\=89978449\&ved\=0CBUQjRxqFwoTCJD78bzIso8DFQAAAAAdAAAAABAj\)\] {
+    list-style-image: url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fimgbin.com%2Ffree-png%2Fgreen-tick&psig=AOvVaw1Y8ERQTcH1K2Eka9tGrJmV&ust=1756644387678000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCJD78bzIso8DFQAAAAAdAAAAABAj);
+  }
+  .space-y-2 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 2) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-y-reverse)));
+    }
   }
   .border {
     border-style: var(--tw-border-style);
@@ -194,12 +237,19 @@
   .p-4 {
     padding: calc(var(--spacing) * 4);
   }
+  .p-6 {
+    padding: calc(var(--spacing) * 6);
+  }
   .text-center {
     text-align: center;
   }
   .text-3xl {
     font-size: var(--text-3xl);
     line-height: var(--tw-leading, var(--text-3xl--line-height));
+  }
+  .text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
   }
   .text-xl {
     font-size: var(--text-xl);
@@ -211,6 +261,9 @@
   }
   .text-blue-600 {
     color: var(--color-blue-600);
+  }
+  .text-red-700 {
+    color: var(--color-red-700);
   }
   .italic {
     font-style: italic;
@@ -242,6 +295,11 @@
     }
   }
 }
+@property --tw-space-y-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
 @property --tw-border-style {
   syntax: "*";
   inherits: false;
@@ -263,6 +321,7 @@
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
+      --tw-space-y-reverse: 0;
       --tw-border-style: solid;
       --tw-font-weight: initial;
       --tw-outline-style: solid;
