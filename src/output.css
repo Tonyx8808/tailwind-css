@@ -12,7 +12,7 @@
     --color-blue-500: oklch(62.3% 0.214 259.815);
     --color-blue-600: oklch(54.6% 0.245 262.881);
     --color-pink-700: oklch(52.5% 0.223 3.958);
-    --color-gray-200: oklch(92.8% 0.006 264.531);
+    --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
     --text-lg: 1.125rem;
@@ -205,44 +205,20 @@
   .mx-auto {
     margin-inline: auto;
   }
-  .mt-72 {
-    margin-top: calc(var(--spacing) * 72);
-  }
-  .mt-84 {
-    margin-top: calc(var(--spacing) * 84);
-  }
-  .mt-96 {
-    margin-top: calc(var(--spacing) * 96);
-  }
-  .mr-72 {
-    margin-right: calc(var(--spacing) * 72);
-  }
-  .mr-84 {
-    margin-right: calc(var(--spacing) * 84);
-  }
-  .mr-96 {
-    margin-right: calc(var(--spacing) * 96);
-  }
-  .mb-72 {
-    margin-bottom: calc(var(--spacing) * 72);
-  }
-  .mb-84 {
-    margin-bottom: calc(var(--spacing) * 84);
-  }
-  .mb-96 {
-    margin-bottom: calc(var(--spacing) * 96);
-  }
-  .ml-72 {
-    margin-left: calc(var(--spacing) * 72);
-  }
-  .ml-84 {
-    margin-left: calc(var(--spacing) * 84);
-  }
-  .ml-96 {
-    margin-left: calc(var(--spacing) * 96);
+  .flex {
+    display: flex;
   }
   .table {
     display: table;
+  }
+  .h-16 {
+    height: calc(var(--spacing) * 16);
+  }
+  .min-h-screen {
+    min-height: 100vh;
+  }
+  .w-32 {
+    width: calc(var(--spacing) * 32);
   }
   .border-collapse {
     border-collapse: collapse;
@@ -259,11 +235,34 @@
   .list-disc {
     list-style-type: disc;
   }
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .gap-4 {
+    gap: calc(var(--spacing) * 4);
+  }
   .space-y-2 {
     :where(& > :not(:last-child)) {
       --tw-space-y-reverse: 0;
       margin-block-start: calc(calc(var(--spacing) * 2) * var(--tw-space-y-reverse));
       margin-block-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-y-4 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-x-4 {
+    :where(& > :not(:last-child)) {
+      --tw-space-x-reverse: 0;
+      margin-inline-start: calc(calc(var(--spacing) * 4) * var(--tw-space-x-reverse));
+      margin-inline-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-x-reverse)));
     }
   }
   .border {
@@ -272,9 +271,6 @@
   }
   .bg-blue-500 {
     background-color: var(--color-blue-500);
-  }
-  .bg-gray-200 {
-    background-color: var(--color-gray-200);
   }
   .p-4 {
     padding: calc(var(--spacing) * 4);
@@ -305,6 +301,9 @@
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
+  }
+  .text-black {
+    color: var(--color-black);
   }
   .text-blue-600 {
     color: var(--color-blue-600);
@@ -369,7 +368,74 @@
 .m-96 {
   margin: var(--spacing-96);
 }
+:root {
+  --color-brand: #082f49;
+  --color-accent: #F97316;
+  --color-muted: #94A3B8;
+  --color-success: #16A34A;
+  --color-warning: #F59E0B;
+  --color-danger: #DC2626;
+}
+.bg-brand {
+  background-color: var(--color-brand);
+}
+.bg-accent {
+  background-color: var(--color-accent);
+}
+.bg-muted {
+  background-color: var(--color-muted);
+}
+.bg-success {
+  background-color: var(--color-success);
+}
+.bg-warning {
+  background-color: var(--color-warning);
+}
+.bg-danger {
+  background-color: var(--color-danger);
+}
+.text-brand {
+  color: var(--color-brand);
+}
+.text-accent {
+  color: var(--color-accent);
+}
+.text-muted {
+  color: var(--color-muted);
+}
+.text-success {
+  color: var(--color-success);
+}
+.text-warning {
+  color: var(--color-warning);
+}
+.text-danger {
+  color: var(--color-danger);
+}
+.border-brand {
+  border-color: var(--color-brand);
+}
+.border-accent {
+  border-color: var(--color-accent);
+}
+.border-muted {
+  border-color: var(--color-muted);
+}
+.border-success {
+  border-color: var(--color-success);
+}
+.border-warning {
+  border-color: var(--color-warning);
+}
+.border-danger {
+  border-color: var(--color-danger);
+}
 @property --tw-space-y-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-space-x-reverse {
   syntax: "*";
   inherits: false;
   initial-value: 0;
@@ -396,6 +462,7 @@
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
       --tw-space-y-reverse: 0;
+      --tw-space-x-reverse: 0;
       --tw-border-style: solid;
       --tw-font-weight: initial;
       --tw-outline-style: solid;

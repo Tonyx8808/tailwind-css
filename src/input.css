@@ -14,3 +14,37 @@
 .m-72 { margin: var(--spacing-72); }
 .m-84 { margin: var(--spacing-84); }
 .m-96 { margin: var(--spacing-96); }
+
+/*palette personalizzata*/
+
+:root {
+  --color-brand: #082f49;   /* blu scuro */
+  --color-accent: #F97316;  /* arancione brillante */
+  --color-muted: #94A3B8;   /* grigio chiaro */
+  --color-success: #16A34A; /* verde */
+  --color-warning: #F59E0B; /* giallo */
+  --color-danger: #DC2626;  /* rosso */
+}
+
+  /*classi per le palette*/
+
+  .bg-brand { background-color: var(--color-brand); }
+.bg-accent { background-color: var(--color-accent); }
+.bg-muted { background-color: var(--color-muted); }
+.bg-success { background-color: var(--color-success); }
+.bg-warning { background-color: var(--color-warning); }
+.bg-danger { background-color: var(--color-danger); }
+
+.text-brand { color: var(--color-brand); }
+.text-accent { color: var(--color-accent); }
+.text-muted { color: var(--color-muted); }
+.text-success { color: var(--color-success); }
+.text-warning { color: var(--color-warning); }
+.text-danger { color: var(--color-danger); }
+
+.border-brand { border-color: var(--color-brand); }
+.border-accent { border-color: var(--color-accent); }
+.border-muted { border-color: var(--color-muted); }
+.border-success { border-color: var(--color-success); }
+.border-warning { border-color: var(--color-warning); }
+.border-danger { border-color: var(--color-danger); }
