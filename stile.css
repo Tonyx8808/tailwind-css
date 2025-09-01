@@ -1,0 +1,17 @@
+.gradient-text {
+  font-size: 3rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #3a9bfd, #c66dfd, #ff5f5f, #ffc107);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  animation: gradientMove 4s linear infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% }
+  100% { background-position: 100% }
+}
+
+

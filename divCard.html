@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Div Card</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="./stile.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen relative">
+
+  <!-- Sfondo -->
+  <div class="absolute inset-0 bg-cover bg-center"
+       style="background-image: url('./sfondo.jpg');"></div>
+  <div class="absolute inset-0 bg-black/50"></div>
+
+  <!-- Titolo -->
+  <h1 class="gradient-text relative z-10 text-4xl md:text-6xl font-extrabold text-center mb-8">
+    PRODOTTI APPLE
+  </h1>
+
+  <!-- Contenuto -->
+  <main class="relative z-10 flex items-center justify-center p-6 w-full">
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl w-full">
+
+      <!-- Card 1 -->
+      <a href="#"
+        class="flex flex-col bg-[#1e293b]/70 hover:bg-[#1e293b] border border-gray-700 rounded-xl shadow-md 
+               transition duration-300">
+        <img src="./e-watch-ultra-2-png.png" alt="e-watch"
+             class="w-full h-48 object-cover rounded-t-xl">
+        <div class="flex flex-col justify-between p-4 text-center sm:text-left text-white">
+          <h5 class="mb-2 text-lg font-bold tracking-tight">E-Watch Ultra 2</h5>
+          <p class="mb-3 text-sm">Smartwatch resistente e con funzioni avanzate per lo sport.</p>
+          <span class="text-indigo-400 font-medium">$799</span>
+        </div>
+      </a>
+
+      <!-- Card 2 -->
+      <a href="#"
+        class="flex flex-col bg-[#1e293b]/70 hover:bg-[#1e293b] border border-gray-700 rounded-xl shadow-md 
+               transition duration-300">
+        <img src="./all_color.jpg" alt="watch-2"
+             class="w-full h-48 object-cover rounded-t-xl">
+        <div class="flex flex-col justify-between p-4 text-center sm:text-left text-white">
+          <h5 class="mb-2 text-lg font-bold tracking-tight">
+            Il primo iPhone progettato per Apple Intelligence
+          </h5>
+          <p class="mb-3 text-sm">Controllo fotocamera. Prendi tutto e scatta.</p>
+          <span class="text-indigo-400 font-medium">$999</span>
+        </div>
+      </a>
+
+      <!-- Card 3 -->
+      <a href="#"
+        class="flex flex-col bg-[#1e293b]/70 hover:bg-[#1e293b] border border-gray-700 rounded-xl shadow-md 
+               transition duration-300">
+        <img src="./macbook-air-apple-intelligence.webp" alt="macbook"
+             class="w-full h-48 object-cover rounded-t-xl">
+        <div class="flex flex-col justify-between p-4 text-center sm:text-left text-white">
+          <h5 class="mb-2 text-lg font-bold tracking-tight">Iperleggero. Extraveloce.</h5>
+          <p class="mb-3 text-sm">Fatto per fare strada.</p>
+          <span class="text-indigo-400 font-medium">$899</span>
+        </div>
+      </a>
+
+    </div>
+  </main>
+</body>
+</html>
