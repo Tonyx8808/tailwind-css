@@ -41,6 +41,9 @@
 .text-success { color: var(--color-success); }
 .text-warning { color: var(--color-warning); }
 .text-danger { color: var(--color-danger); }
+.text-link {color:#500724 }
+.text.p {color: #365314}
+.text h1 {color: #0f172a}
 
 .border-brand { border-color: var(--color-brand); }
 .border-accent { border-color: var(--color-accent); }

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Layout con Colori Personalizzati</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              500: '#3B82F6',
+              600: '#2563EB',
+            },
+            secondary: {
+              500: '#EC4899',
+            },
+            accent: {
+              400: '#8B5CF6',
+              500: '#7C3AED',
+            },
+            text: {
+              light: '#F8FAFC',
+              dark: '#1E293B',
+            },
+            background: {
+              primary: '#F1F5F9',
+              secondary: '#E2E8F0',
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background-primary text-text-dark font-sans leading-relaxed">
+
+  <!-- Header -->
+  <header class="bg-primary-500 text-text-light py-6 px-8 shadow-md">
+    <h1 class="text-3xl font-bold">Sito Web Moderno</h1>
+    <nav class="mt-4">
+      <a href="#" class="text-white hover:text-accent-400 transition-colors duration-200 mr-6">Home</a>
+      <a href="#" class="text-white hover:text-accent-400 transition-colors duration-200 mr-6">Chi Siamo</a>
+      <a href="#" class="text-white hover:text-accent-400 transition-colors duration-200">Contatti</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-6 py-12 grid md:grid-cols-3 gap-10">
+
+    <!-- Articolo 1 -->
+    <article class="bg-white p-8 rounded-lg shadow-lg">
+      <h2 class="text-2xl font-semibold text-primary-600 mb-4">Benvenuti nel Nostro Blog</h2>
+      <p class="text-text-dark mb-6">
+        Questo è un paragrafo di esempio con il colore del testo scuro. Il layout è pulito e moderno, 
+        con colori personalizzati definiti in Tailwind.
+      </p>
+      <a href="#" class="text-secondary-500 hover:text-accent-500 font-medium transition-colors duration-200">
+        Leggi di più →
+      </a>
+    </article>
+
+    <!-- Articolo 2 -->
+    <article class="bg-background-secondary p-8 rounded-lg shadow-md">
+      <h2 class="text-2xl font-semibold text-accent-500 mb-4">Design Elegante</h2>
+      <p class="text-text-dark mb-6">
+        Grazie alla palette personalizzata, possiamo creare un'esperienza visiva coerente e accattivante.
+      </p>
+      <a href="#" class="text-primary-500 hover:text-primary-600 font-medium transition-colors duration-200">
+        Scopri il design
+      </a>
+    </article>
+
+    <!-- Articolo 3 -->
+    <article class="bg-gradient-to-br from-primary-500 to-accent-500 text-text-light p-8 rounded-lg shadow-lg">
+      <h2 class="text-2xl font-semibold mb-4">Colori in Azione</h2>
+      <p class="mb-6 opacity-90">
+        Questo blocco usa un gradiente tra il colore primario e l'accento, con testo chiaro.
+      </p>
+      <a href="#" class="underline hover:text-white font-semibold transition-colors duration-200">
+        Vedi esempi
+      </a>
+    </article>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-text-dark text-text-light py-8 px-6 text-center">
+    <p>&copy; 2025 Sito Web Moderno. Tutti i diritti riservati.</p>
+    <div class="mt-4">
+      <a href="#" class="text-secondary-500 hover:text-white mx-3">Privacy</a>
+      <a href="#" class="text-accent-400 hover:text-white mx-3">Termini</a>
+      <a href="#" class="text-primary-500 hover:text-white mx-3">Supporto</a>
+    </div>
+  </footer>
+
+</body>
+</html>
