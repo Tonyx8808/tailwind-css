@@ -1,30 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="h-full">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tailwind</title>
-    <link href="./src/output.css" rel="stylesheet">
-    </head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dark mode</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'media',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              500: '#41463D',       // Verde scuro chiaro
+              600: '#2E322B',       // Più scuro, per hover/testo
+              dark: '#1E221C',      // Versione ancora più scura per modalità scura
+            },
+            secondary: {
+              500: '#9D8DF1',       // Viola
+              600: '#8A70E0',
+              dark: '#7A5EDB',
+            },
+            background: {
+              light: '#F9FAFB',
+              dark: '#121826',
+            },
+            text: {
+              light: '#1E293B',
+              dark: '#E2E8F0',
+            }
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    * {
+      transition: background-color 0.3s, color 0.3s;
+    }
+  </style>
+</head>
+<body class="h-full bg-background-light text-text-light dark:bg-background-dark dark:text-text-dark min-h-screen font-sans leading-relaxed">
 
-<body>
-    <div class="container mx-auto p-6">
-<h1 class="text-center bg-blue-500 p-4"> HELLO WORD!</h1>
-<h2 class="text-xl font-bold text-center">Lorem ipsum</h2>
-<h3 class="bg-brand  text-pink-700 p-4">lorem ipsum</h3>
-<p class="italic ">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-<ul class=" list-inside font-bold text-blue-600 hover:text-red-600 transition duration-300 text-center list-disc">
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-    <li>4</li>
-    <li>5</li>
-</ul>
-<ol class="list-decimal list-inside space-y-2 text-lg text-red-700 p-4">
-    <li>Pomodoro</li>
-    <li>Basilico</li>
-    <li>Mozzarella</li>
-    <li>Olio</li>
-</ol>
-</div>
+  <!-- Header -->
+  <header class="bg-primary-500 text-white py-6 px-8 shadow-md">
+    <h1 class="text-3xl font-bold">Sito Web Moderno</h1>
+    <nav class="mt-4">
+      <a href="#" class="text-white hover:text-secondary-600 transition-colors duration-200 mr-6">Home</a>
+      <a href="#" class="text-white hover:text-secondary-600 transition-colors duration-200 mr-6">Chi Siamo</a>
+      <a href="#" class="text-white hover:text-secondary-600 transition-colors duration-200">Contatti</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-6 py-12 grid md:grid-cols-3 gap-10">
+
+    <!-- Articolo 1 -->
+    <article class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
+      <h2 class="text-2xl font-semibold text-primary-600 dark:text-primary-dark mb-4">Benvenuti nel Nostro Blog</h2>
+      <p class="text-text-light dark:text-gray-300 mb-6">
+        Questo è un paragrafo di esempio con il colore del testo scuro. Il layout è pulito e moderno, 
+        con colori personalizzati definiti in Tailwind.
+      </p>
+      <a href="#" class="text-secondary-500 hover:text-secondary-600 font-medium transition-colors duration-200">
+        Leggi di più →
+      </a>
+    </article>
+
+    <!-- Articolo 2 -->
+    <article class="bg-gray-100 dark:bg-primary-dark p-8 rounded-lg shadow-md">
+      <h2 class="text-2xl font-semibold text-secondary-500 dark:text-secondary-dark mb-4">Design Elegante</h2>
+      <p class="text-text-light dark:text-gray-300 mb-6">
+        Grazie alla palette personalizzata, possiamo creare un'esperienza visiva coerente e accattivante.
+      </p>
+      <a href="#" class="text-primary-500 hover:text-primary-600 font-medium transition-colors duration-200">
+        Scopri il design
+      </a>
+    </article>
+
+    <!-- Articolo 3 -->
+    <article class="bg-gradient-to-br from-primary-500 to-secondary-500 text-white p-8 rounded-lg shadow-lg">
+      <h2 class="text-2xl font-semibold mb-4">Colori in Azione</h2>
+      <p class="mb-6 opacity-90">
+        Questo blocco usa un gradiente tra il colore primario e secondario, con testo chiaro.
+      </p>
+      <a href="#" class="underline hover:text-primary-100 font-semibold transition-colors duration-200">
+        Vedi esempi
+      </a>
+    </article>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-text-light dark:bg-text-dark text-white py-8 px-6 text-center">
+    <p>&copy; 2025 Sito Web Moderno. Tutti i diritti riservati.</p>
+    <div class="mt-4">
+      <a href="#" class="text-secondary-500 hover:text-white mx-3">Privacy</a>
+      <a href="#" class="text-secondary-400 hover:text-white mx-3">Termini</a>
+      <a href="#" class="text-primary-400 hover:text-white mx-3">Supporto</a>
+    </div>
+  </footer>
+
+</body>
+</html>
