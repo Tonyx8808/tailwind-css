@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Form - Disabled styles funzionante</title>
+<style>
+  :root{
+    --bg:#f3f4f6; --card:#ffffff; --muted:#6b7280; --accent:#4f46e5; --danger:#e11d48;
+    --border:#e5e7eb;
+  }
+  *{box-sizing:border-box;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
+  body{min-height:100vh;margin:0;display:flex;align-items:center;justify-content:center;padding:20px;background:var(--bg);}
+
+  /* layout */
+  .card{width:100%;max-width:920px;background:var(--card);border-radius:12px;box-shadow:0 6px 20px rgba(2,6,23,.08);overflow:hidden}
+  header{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid var(--border)}
+  .content{padding:20px}
+
+  h1{margin:0;font-size:18px;color:#111827}
+  p.lead{margin:4px 0 0;color:var(--muted);font-size:13px}
+
+  /* toggle */
+  .toggle{display:inline-flex;align-items:center;gap:12px}
+  .switch{width:48px;height:26px;border-radius:999px;background:#e6e7ee;border:0;position:relative;padding:3px;cursor:pointer;transition:background .18s}
+  .switch .dot{width:20px;height:20px;border-radius:50%;background:white;box-shadow:0 2px 6px rgba(2,6,23,.12);transition:transform .18s}
+  .switch.on{background:var(--accent)}
+  .switch.on .dot{transform:translateX(22px)}
+
+  /* form grid */
+  .grid{display:grid;grid-template-columns:1fr;gap:14px}
+  @media(min-width:700px){ .grid{grid-template-columns:repeat(6,1fr)} }
+
+  .col-span-4{grid-column:span 4}
+  .col-span-3{grid-column:span 3}
+  .col-span-6{grid-column:span 6}
+
+  label{display:block;font-size:13px;color:#374151;margin-bottom:6px}
+  input[type="text"], input[type="email"], textarea, select{
+    width:100%;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:#fff;color:#111827;
+    font-size:14px;outline:none;transition:box-shadow .12s, border-color .12s;
+  }
+  input:focus, textarea:focus, select:focus{box-shadow:0 0 0 4px rgba(79,70,229,.08);border-color:var(--accent)}
+
+  /* disabled styles */
+  input:disabled, textarea:disabled, select:disabled{
+    background:#f8fafc;border-color:#e6e7ee;color:var(--muted);cursor:not-allowed;
+    opacity:0.95;
+  }
+  button{padding:9px 14px;border-radius:8px;border:0;font-weight:600;cursor:pointer}
+  .btn-ghost{background:#fff;border:1px solid var(--border);color:#111827}
+  .btn-primary{background:var(--accent);color:white;box-shadow:0 6px 18px rgba(79,70,229,.18)}
+  .btn-cancel{background:#fff;border:1px solid var(--border);color:#111827}
+
+  button:disabled{
+    background:#e9e9ee;color:#9ca3af;cursor:not-allowed;box-shadow:none;opacity:0.9;
+  }
+
+  /* small helper */
+  .input-with-prefix{display:flex;align-items:center;border-radius:8px;overflow:hidden;border:1px solid var(--border);background:#fff}
+  .prefix{padding:0 10px;color:var(--muted);font-size:13px;white-space:nowrap}
+  .note{font-size:12px;color:var(--muted);margin-top:6px}
+
+  .row-end{display:flex;gap:10px;justify-content:flex-end;align-items:center}
+  @media(max-width:699px){ .row-end{flex-direction:column-reverse;align-items:stretch} .row-end button{width:100%} }
+</style>
+</head>
+<body>
+
+<div class="card" role="region" aria-label="Esempio form">
+  <header>
+    <div>
+      <h1>Profilo utente</h1>
+      <p class="lead">Prova il toggle per disabilitare/abilitare tutti i controlli.</p>
+    </div>
+
+    <div class="toggle" aria-hidden="false">
+      <span style="font-size:13px;color:#374151">Disable form</span>
+      <button id="disable-toggle" class="switch" aria-pressed="false" aria-label="Disabilita il form">
+        <span class="dot"></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="content">
+    <form id="main-form">
+      <div class="grid">
+        <!-- Username -->
+        <div class="col-span-4">
+          <label for="username">Username</label>
+          <div class="input-with-prefix">
+            <div class="prefix">workcation.com/</div>
+            <input id="username" name="username" type="text" placeholder="janesmith">
+          </div>
+        </div>
+
+        <!-- Email full width -->
+        <div class="col-span-6">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email">
+        </div>
+
+        <!-- About textarea full -->
+        <div class="col-span-6">
+          <label for="about">About</label>
+          <textarea id="about" name="about" rows="4" placeholder="Scrivi qualcosa su di te..."></textarea>
+          <div class="note">Scrivi una breve descrizione.</div>
+        </div>
+
+        <!-- Country select -->
+        <div class="col-span-3">
+          <label for="country">Country</label>
+          <select id="country" name="country">
+            <option>Italy</option>
+            <option>United States</option>
+            <option>Canada</option>
+          </select>
+        </div>
+
+        <!-- Notifications -->
+        <fieldset class="col-span-3" style="border:0;padding:0;margin:0">
+          <legend style="font-size:13px;color:#374151;margin-bottom:6px">Notifiche</legend>
+          <label style="display:flex;gap:8px;align-items:center;font-size:14px">
+            <input id="notif-comments" type="checkbox" name="comments">
+            <span>Commenti</span>
+          </label>
+          <label style="display:flex;gap:8px;align-items:center;font-size:14px;margin-top:6px">
+            <input id="notif-offers" type="checkbox" name="offers">
+            <span>Offerte</span>
+          </label>
+        </fieldset>
+
+        <!-- Buttons -->
+        <div class="col-span-6 row-end" style="margin-top:6px">
+          <button type="button" id="cancel" class="btn-cancel">Cancel</button>
+          <button type="submit" id="save" class="btn-primary">Save</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  (function(){
+    const toggle = document.getElementById('disable-toggle');
+    const dot = toggle.querySelector('.dot');
+    const form = document.getElementById('main-form');
+    let disabled = false;
+
+    function updateUI(){
+      toggle.setAttribute('aria-pressed', String(disabled));
+      if(disabled){
+        toggle.classList.add('on');
+      } else {
+        toggle.classList.remove('on');
+      }
+
+      // Disabilita tutti gli input/select/textarea/button dentro il form
+      const els = form.querySelectorAll('input, textarea, select, button');
+      els.forEach(el => {
+        // Non vogliamo disabilitare il toggle (è fuori dal form) — ma se per sbaglio lo inserisci, skip:
+        if (el === toggle) return;
+        el.disabled = disabled;
+        if(disabled) el.setAttribute('aria-disabled','true');
+        else el.removeAttribute('aria-disabled');
+      });
+    }
+
+    // click toggle
+    toggle.addEventListener('click', () => {
+      disabled = !disabled;
+      updateUI();
+    });
+
+    // Previeni submit quando disabilitato e mostra simulazione
+    form.addEventListener('submit', (e) => {
+      if (disabled) { e.preventDefault(); return; }
+      e.preventDefault();
+      alert('Form inviato (simulazione).');
+    });
+
+    // inizializza UI
+    updateUI();
+  })();
+</script>
+
+</body>
+</html>
