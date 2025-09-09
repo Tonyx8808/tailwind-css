@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerarchia stili</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="p-6 bg-amber-50 font-serif">
+
+  <!-- Titolo principale -->
+  <h1 class="text-5xl font-extrabold text-red-900 mb-4 text-center">Titolo principale</h1>
+
+  <!-- Sottotitolo -->
+  <h2 class="text-2xl font-mono text-red-400 mb-3 text-center">Sottotitolo</h2>
+
+  <!-- Paragrafo normale -->
+  <p class="text-red-300 mb-3 text-center" style="font-stretch: 95%;">Paragrafo</p>
+
+  <!-- Testo con importanza media -->
+  <p class="text-gray-800 font-semibold mb-3 text-center">
+    Questo testo ha importanza media. Potrebbe essere un’informazione chiave, ma non critica.
+  </p>
+
+  <!-- Testo con massima importanza -->
+  <p class="text-red-600 font-bold text-lg mb-3 text-center">
+    Attenzione: questo testo è critico e deve risaltare visivamente!
+  </p>
+
+  <!-- Lista con diversi livelli di enfasi (centrata) -->
+  <ul class="list-disc pl-5 text-gray-700 mx-auto w-max text-center mb-6">
+    <li class="font-semibold">Elemento importante nella lista</li>
+    <li class="text-gray-500">Elemento meno rilevante</li>
+    <li class="text-red-600 font-bold">Elemento critico!</li>
+  </ul>
+<ol class="list-decimal pl-6 space-y-4">
+  <li>
+    <strong>Titolo principale</strong>
+    <ul class="list-disc pl-5 mt-2">
+      <li>Classi: <code>text-5xl font-extrabold text-red-900 text-center</code></li>
+      <li>Risultato: testo molto grande, bold, rosso scuro, centrato → massima importanza visiva.</li>
+    </ul>
+  </li>
+  <li>
+    <strong>Sottotitoli</strong>
+    <ul class="list-disc pl-5 mt-2">
+      <li>Classi: <code>text-2xl font-mono text-red-400 text-center</code></li>
+      <li>Risultato: dimensione intermedia, colore rosso più chiaro, centrato → importante ma secondario rispetto a &lt;h1&gt;.</li>
+    </ul>
+  </li>
+  <li>
+    <strong>Paragrafi</strong>
+    <ul class="list-disc pl-5 mt-2">
+      <li>Normale: <code>text-red-300</code> → meno impatto visivo, colore più chiaro.</li>
+      <li>Media importanza: <code>text-gray-800 font-semibold</code> → peso maggiore, colore scuro, visivamente più evidente.</li>
+      <li>Massima importanza: <code>text-red-600 font-bold text-lg</code> → colore rosso acceso, grassetto e leggermente più grande → massimo impatto visivo.</li>
+    </ul>
+  </li>
+  <li>
+    <strong>Liste</strong>
+    <ul class="list-disc pl-5 mt-2">
+      <li>Centrate e con pesi/colori diversi (<code>font-semibold</code>, <code>text-gray-500</code>, <code>text-red-600 font-bold</code>) → differenziano importanza di ciascun elemento della lista.</li>
+    </ul>
+  </li>
+  <li>
+    <strong>Spaziatura</strong>
+    <ul class="list-disc pl-5 mt-2">
+      <li><code>p-6</code>, <code>mb-3</code>, <code>mb-4</code>, <code>mb-6</code> → padding e margini separano visivamente sezioni e paragrafi, migliorando leggibilità e chiarezza della gerarchia.</li>
+    </ul>
+  </li>
+</ol>
+
+  
+
+</body>
+</html>
