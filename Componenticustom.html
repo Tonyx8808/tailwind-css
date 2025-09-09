@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To Do List</title>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/your-kit.js" crossorigin="anonymous"></script>
+  <!--
+/* Solo utilities */
+@tailwind utilities;
+
+/* Componenti personalizzati */
+@layer utilities {
+  .card-section {
+    @apply max-w-lg mx-auto bg-blue-100/30 border border-amber-500 rounded-lg p-4 shadow-sm;
+  }
+
+  .card-title {
+    @apply text-center text-xl font-semibold mb-3 text-amber-500 font-sans;
+  }
+
+  .input-task {
+    @apply w-full pl-10 pr-3 py-2 border border-amber-500 rounded-lg outline-none text-sky-900 placeholder-gray-400 bg-blue-50/50;
+  }
+
+  .btn-add {
+    @apply text-amber-500 hover:text-amber-700 cursor-pointer;
+  }
+
+  .navbar {
+    @apply bg-blue-400 border-b-4 border-amber-500 w-full;
+  }
+
+  .navbar-link {
+    @apply flex items-center space-x-2 hover:text-amber-700 text-white font-semibold;
+  }
+}
+-->
+
+</head>
+<body class="bg-gradient-to-r from-blue-500 via-sky-600 to-amber-400 min-h-screen flex flex-col items-center font-sans">
+
+  <!-- Navbar -->
+  <nav class="bg-blue-400 border-b-4 border-amber-500 w-full p-4 shadow-md">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <a href="#" class="flex items-center gap-2 text-white font-semibold hover:text-amber-300"><i class="fa-solid fa-house"></i>Home</a>
+      <a href="#" class="flex items-center gap-2 text-white font-semibold hover:text-amber-300"><i class="fa-solid fa-briefcase"></i>Work</a>
+      <a href="#" class="flex items-center gap-2 text-white font-semibold hover:text-amber-300"><i class="fa-solid fa-volleyball"></i>Sport</a>
+      <a href="#" class="flex items-center gap-2 text-white font-semibold hover:text-amber-300"><i class="fa-solid fa-plus"></i>Add</a>
+    </div>
+  </nav>
+
+  <!-- Titolo -->
+  <h1 class="text-5xl text-amber-500 mt-12 font-bold text-center">To Do Lista</h1>
+
+  <!-- Ricerca -->
+  <div class="mt-8 max-w-lg w-full">
+    <div class="flex items-center border border-amber-500 rounded-lg p-2 bg-white/70 shadow">
+      <input type="text" placeholder="Cerca attività..." class="flex-1 px-3 py-2 outline-none text-sky-900 bg-transparent">
+      <i class="fa-solid fa-magnifying-glass text-amber-500 text-xl"></i>
+    </div>
+  </div>
+
+  <!-- Attività da fare -->
+  <div class="mt-10 max-w-lg w-full bg-white/70 border border-amber-500 rounded-lg p-4 shadow">
+    <h2 class="text-xl font-semibold text-amber-500 text-center mb-4">Attività da fare</h2>
+    <div class="flex items-center gap-2">
+      <i class="fa-solid fa-check text-amber-500"></i>
+      <input type="text" placeholder="Elementi da fare" class="flex-1 px-3 py-2 border border-amber-500 rounded-lg outline-none text-sky-900 bg-transparent">
+    </div>
+  </div>
+
+  <!-- Attività concluse -->
+  <div class="mt-8 max-w-lg w-full bg-white/70 border border-amber-500 rounded-lg p-4 shadow">
+    <h2 class="text-xl font-semibold text-amber-500 text-center mb-4">Attività concluse</h2>
+    <div class="flex flex-col space-y-2">
+      <div class="flex items-center gap-2">
+        <span class="text-sky-900">Comprare il latte</span>
+        <i class="fa-regular fa-circle text-amber-500"></i>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="line-through text-gray-500">Inviare email</span>
+        <i class="fa-solid fa-circle-check text-green-500"></i>
+      </div>
+      <div class="flex items-center gap-2">
+        <input type="text" placeholder="Aggiungi nuova attività..." class="flex-1 px-3 py-2 outline-none text-sky-900 bg-transparent">
+        <i class="fa-solid fa-plus text-amber-500 hover:text-amber-700 cursor-pointer"></i>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -58,3 +58,35 @@
 .border-warning { border-color: var(--color-warning); }
 .border-danger { border-color: var(--color-danger); }
 
+/* Base */
+@import "tailwindcss/preflight";
+
+/* Solo utilities */
+@tailwind utilities;
+
+/* Componenti personalizzati */
+@layer utilities {
+  .card-section {
+    @apply max-w-lg mx-auto bg-blue-100/30 border border-amber-500 rounded-lg p-4 shadow-sm;
+  }
+
+  .card-title {
+    @apply text-center text-xl font-semibold mb-3 text-amber-500 font-sans;
+  }
+
+  .input-task {
+    @apply w-full pl-10 pr-3 py-2 border border-amber-500 rounded-lg outline-none text-sky-900 placeholder-gray-400 bg-blue-50/50;
+  }
+
+  .btn-add {
+    @apply text-amber-500 hover:text-amber-700 cursor-pointer;
+  }
+
+  .navbar {
+    @apply bg-blue-400 border-b-4 border-amber-500 w-full;
+  }
+
+  .navbar-link {
+    @apply flex items-center space-x-2 hover:text-amber-700 text-white font-semibold;
+  }
+}
